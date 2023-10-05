@@ -1,16 +1,12 @@
 package it.unicam.cs.pawm.focusBack.entry;
 
 import it.unicam.cs.pawm.focusBack.Distraction;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Calendar;
 import java.util.List;
 
 @Entity
@@ -24,16 +20,25 @@ public class Entry {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    private Integer timerId;
+    private Integer quality;
 
-    private Float percentageOfCompletedTasks;
+    private Integer quantity;
 
-    private Integer qualityOfFocus;
-
-    private List<Distraction> distractions;
+    private Integer completedTasks;
 
     //TODO
-    // you can extract information about the timestamp of the entry with timeCoordinate.get(Calendar.FIELD)
-    // FIELD must be substituted with an actual field, like: YEAR, MONTH...
-    private Calendar timestamp;
+    //private List<Distraction> distractions;
+
+    private Integer year;
+
+    private Integer dayOfTheYear;
+
+    private Integer hourOfTheDay;
+
+    private Integer weekOfTheYear;
+
+    private Integer dayOfTheWeek;
+
+    private Integer month;
+
 }

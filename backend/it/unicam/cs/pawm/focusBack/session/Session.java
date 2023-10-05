@@ -20,9 +20,8 @@ public class Session {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
+    private String name;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Timer> timers;
-
-    //TODO
-    // Add the name field
 }
